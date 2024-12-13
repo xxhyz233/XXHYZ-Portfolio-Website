@@ -46,6 +46,7 @@ h2 {
     font-size: 1rem;
     color: rgb(250, 255, 255);
     font-weight: 400;
+    width: max-content;
 }
 .twoPanelContainer {
     display: flex;      /* Enables flexbox layout */
