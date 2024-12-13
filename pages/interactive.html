@@ -1,0 +1,108 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>XXHYZ</title>
+        <link rel="stylesheet" href="../css/style.css"/>
+        <!--Google Fonts import-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+        <script src="../script/script.js" defer></script>
+    </head>
+    <body>
+        <header class="desktop-head sticky">
+            <nav>
+                <img class="signatureHead scAni" src="../media/images/signature.png"/>
+                <ul class="menu">
+                    <li class="scAni"><a class="c1" href="../index.html">FILM</a></li>
+                    <li class="scAni"><a class="c2" href="../pages/3dcg.html">3D/CG</a></li>
+                    <li class="scAni"><a class="c3" href="..//pages/moving.html">MOVING</a></li>
+                    <li class="scAni"><a class="c4" href="../pages/still.html">STILL</a></li>
+                    <li class="scAni"><a class="c5" href="../pages/interactive.html">INTERACTIVE</a></li>
+                    <li class="scAni"><a href="../pages/info.html">INFO</a></li>
+                </ul>
+            </nav>
+        </header>
+        <header class="mobile-head sticky">
+            <nav>
+                <h1><a href="./">XXHYZ<br/>LUNA CHEN</a></h1>
+                <span class="material-symbols-outlined">menu     
+                    <ul class="works-menu">
+                        <li><a class="c1" href="../index.html">FILM</a></li>
+                        <li><a class="c2" href="./3dcg.html">3D/CG</a></li>
+                        <li><a class="c3" href="./moving.html">MOVING</a></li>
+                        <li><a class="c4" href="./still.html">STILL</a></li>
+                        <li><a class="c5" href="./interactive.html">INTERACTIVE</a></li>
+                        <li><a href="./info.html">INFO</a></li>
+                    </ul>
+                </span>
+            </nav>
+        </header>
+        <div class="page-content" id="main-content">
+            <h1 class="content-title loadAni">INTERACTIVE</h1>
+            <p class="description loadAni">Processing, TouchDesigner, ComfyUI w. Stable Diffusion + Control Net... generative art.</p>
+            <br/>
+
+            <h2 class="alignCenter loadAni">TouchDesigner Works</h2>
+            <br/><br/>
+            <iframe class="YoutubeVideo" width="100%" height="100%" src="https://www.youtube.com/embed/Xp81_VH0qxI?si=TiUzeuu72LNoB4fX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p class="caption">Live Performance Interactive VJ at 音波狂潮上海, Azure Kinect DK motion capture in UE5, control/post-process in TouchDesigner</p>
+            <br/><br/>
+            <iframe class="YoutubeVideo" width="100%" height="100%" src="https://www.youtube.com/embed/6N41j0NCC4w?si=E4GMhX-qS4M5wiRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <br/><br/>
+            <p class="alignCenter caption">Gesture Control Interactive Installation | UE5, TouchDesigner, Leap Motion</p>
+            <video loading="lazy" class="big-video loadAni" width="100%" controls loop muted><source src="../media/videos/INTERACTIVE/LeapMotion.mp4"></video>
+            <p class="caption">Gesture Control with Leap Motion</p>
+            <video loading="lazy" class="big-video loadAni" width="100%" controls loop><source src="../media/videos/INTERACTIVE/AudioReactive_1.mp4"></video>
+            <p class="caption loadAni">
+                Music: 驟雨の狭間 - Silentroom 
+                <br/>
+                Audio Reactive Particle System
+            </p>
+            <br/>
+            <h2 class="alignCenter loadAni">Processing Works</h2>
+            <div class="container loadAni">
+                <div class="column two-Columns">
+                    <div class="processing-column-item">
+                        <iframe class="big-video processingEmbed" src="https://openprocessing.org/sketch/2136284/embed/" width="720" height="720"></iframe>
+                    </div>
+                </div>
+                <div class="column two-Columns">   
+                    <div class="processing-column-item ">
+                        <iframe class="big-video processingEmbed" src="https://openprocessing.org/sketch/2136221/embed/" width="1280" height="720"></iframe>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="https://www.instagram.com/lunachen.xxhyz/"><img class="icons" src="../media/icons/InstagramOutlined.svg"/></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/XXHYZ2"><img class="icons" src="../media/icons/TwitterOutlined.svg"/></a>
+                        </li>
+                        <li>
+                            <a href="https://space.bilibili.com/4558677"><img class="icons" src="../media/icons/Bilibili 1.svg"/></a>
+                        </li>
+                    </ul>
+                </nav>
+            </footer>
+        </div>
+
+        <!-- Overlay of image when clicked -->
+        <div class="fullscreen-view">
+            <span class="close">&times;</span>
+            <img class="fullscreen-image" src="" alt="Fullscreen Image">
+            <video class="fullscreen-video" src="" alt="Fullscreen Image">
+        </div>
+        
+        <div id="preloader">
+            <img src="../media/images/Preload.gif" alt="Loading Animation" id="preloader-logo">
+        </div>
+
+    </body>
+</html>
