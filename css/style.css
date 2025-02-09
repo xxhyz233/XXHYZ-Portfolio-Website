@@ -1,12 +1,12 @@
-/* font-family: "Inter", sans-serif; */
+
 * {
     margin:0;
     padding:0;
 }
 
 body {
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
+    font-family: "Jost", sans-serif;
+    font-size: 1.1rem;
     color: white;
     background-color: black;
 }
@@ -39,14 +39,13 @@ h2 {
     line-height: 2;
 }
 .content-title {
-    font-size: 3.8rem;
+    font-size: 4rem;
     font-weight: 300;
 }
 .description {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: rgb(250, 255, 255);
     font-weight: 400;
-    width: max-content;
 }
 .twoPanelContainer {
     display: flex;      /* Enables flexbox layout */
@@ -64,10 +63,60 @@ h2 {
     color: rgb(200, 200, 200);
 }
 .info {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Jost',sans-serif;
     font-size: 1.2rem;
+    font-weight: 300;
     line-height: 1.5;
 }
+
+.hover-container {
+    position:relative;
+    display: inline-block;
+}
+.thumbnail {
+    display: block;
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+
+}
+/* Black overlay element */
+.black-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0); /* Start transparent */
+    z-index: 2;
+    transition: background 0.3s ease;
+}
+  
+  /* On hover, fade the black overlay in */
+.hover-container:hover .black-overlay {
+    background: rgba(0, 0, 0, 0.5);
+}
+.hover-container:hover .text-overlay {
+    opacity: 1;
+}
+.hover-container:hover .thumbnail {
+    opacity: 1;
+  }
 
 .alignCenter {
     text-align: center;
@@ -110,6 +159,7 @@ header nav {
 
 header a {
     padding: 24px 40px;
+    font-size: 1.2rem;
     font-weight: 300;
     text-decoration: none;
     color:white;
@@ -449,8 +499,37 @@ footer img:hover {
     }
 
     ul.works-menu a {
-        font-family: "Inter", sans-serif;
+        font-family: "Jost", sans-serif;
         font-size: 1.2rem;
+    }
+
+    .description {
+        font-size: .8rem;
+    }
+    /* FILM Page contents */
+    .text-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+    
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    
+        opacity: 1;  
+    }
+
+    .black-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Start transparent */
+        z-index: 2;
     }
 
     /* General Page Content */
