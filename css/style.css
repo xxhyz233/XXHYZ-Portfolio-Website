@@ -77,7 +77,7 @@ h2 {
 }
 .thumbnail {
     display: block;
-    width: 92vw;
+    width: 100%;
     height: auto;
     z-index: 1;
 }
