@@ -69,13 +69,15 @@ h2 {
     line-height: 1.5;
 }
 
+/* FLIM Page */
+
 .hover-container {
     position:relative;
-    display: inline-block;
+    display: inline-block; 
 }
 .thumbnail {
     display: block;
-    width: 100%;
+    width: 92vw;
     height: auto;
     z-index: 1;
 }
@@ -507,6 +509,10 @@ footer img:hover {
         font-size: .8rem;
     }
     /* FILM Page contents */
+
+    .thumbnail{
+        width: 100vw;
+    }
     .text-overlay {
         position: absolute;
         top: 0;
