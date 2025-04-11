@@ -12,36 +12,10 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
         <script src="https://kit.fontawesome.com/253ef9d4b1.js" crossorigin="anonymous"></script>
         <script src="../script/script.js" defer></script>
+        <script src="../script/custom-components.js" defer></script>
     </head>
     <body>
-        <header class="desktop-head sticky">
-            <nav>
-                <img class="signatureHead scAni" src="../media/images/signature.png"/>
-                <ul class="menu">
-                    <li class="scAni"><a class="c1" href="../index.html">FILM</a></li>
-                    <li class="scAni"><a class="c2" href="../pages/3dcg.html">3D/CG</a></li>
-                    <li class="scAni"><a class="c3" href="..//pages/moving.html">MOVING</a></li>
-                    <li class="scAni"><a class="c4" href="../pages/still.html">STILL</a></li>
-                    <li class="scAni"><a class="c5" href="../pages/interactive.html">INTERACTIVE</a></li>
-                    <li class="scAni"><a href="../pages/info.html">INFO</a></li>
-                </ul>
-            </nav>
-        </header>
-        <header class="mobile-head sticky">
-            <nav>
-                <h1><a href="./">XXHYZ<br/>LUNA CHEN</a></h1>
-                <span class="material-symbols-outlined">menu     
-                    <ul class="works-menu">
-                        <li><a class="c1" href="../index.html">FILM</a></li>
-                        <li><a class="c2" href="./3dcg.html">3D/CG</a></li>
-                        <li><a class="c3" href="./moving.html">MOVING</a></li>
-                        <li><a class="c4" href="./still.html">STILL</a></li>
-                        <li><a class="c5" href="./interactive.html">INTERACTIVE</a></li>
-                        <li><a href="./info.html">INFO</a></li>
-                    </ul>
-                </span>
-            </nav>
-        </header>
+        <custom-header></custom-header>
         <div class="page-content" id="main-content">
             <h1 class="content-title loadAni">3DCG</h1>
             <p class="description loadAni">3D Environment Art / Motion Design works made with Cinema 4D, ZBrush, and Unreal Engine 5.</p>
@@ -83,21 +57,7 @@
                     </div>
                 </div>
             </div> 
-            <footer>
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="https://www.instagram.com/xxhyz.lunachen/"><i class="fa-brands fa-instagram fa-xl icons" style="color: #ffffff;"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/XXHYZ2"><i class="fa-brands fa-x-twitter fa-xl icons" style="color: #ffffff;"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://space.bilibili.com/4558677"><i class="fa-brands fa-bilibili fa-xl icons" style="color: #ffffff;"></i></a>
-                        </li>
-                    </ul>
-                </nav>
-            </footer> 
+            <custom-footer></custom-footer>
         </div>
         <!-- Overlay of image when clicked -->
         <div class="fullscreen-view">
