@@ -5,7 +5,9 @@ import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
 import { OutlinePass } from 'three/addons/postprocessing/OutlinePass.js';
 
 // Setting up Renderer
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({
+    canvas: document.querySelector('#bg'),
+});
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setAnimationLoop( animate );
 
@@ -13,12 +15,6 @@ renderer.setAnimationLoop( animate );
 // We NEED a Scene, Camera, Geometry, and Renderer
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const geometry = new THREE.BoxGeometry(1, 1, 1);
-const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
-
-// Takes a geometry and applies a material to it
-const cube = new THREE.Mesh( geometry, material);
-scene.add ( cube );
 
 camera.position.z = 5;
 
@@ -37,6 +33,7 @@ outlinePass.visibleEdgeColor.set(0xffffff); // Outline color
 outlinePass.hiddenEdgeColor.set(0xffffff); // Hidden edge color
 composer.addPass(outlinePass);
 
+// Load the glb model
 const loader = new GLTFLoader();
 let banana = null;
 loader.load( './media/3d/banana.glb', function (gltf) {
@@ -53,15 +50,11 @@ loader.load( './media/3d/banana.glb', function (gltf) {
 const light = new THREE.AmbientLight( 0xffffff , 4);
 scene.add(light);
 
-
-
 // Adding the rendere into our HTML body
 document.body.appendChild(renderer.domElement);
 
 // Calls every refresh rate 
 function animate() {
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
 
     // Only rotate if banana is loaded
     if (banana) {

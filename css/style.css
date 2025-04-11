@@ -69,6 +69,13 @@ h2 {
     line-height: 1.5;
 }
 
+/* 3D */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 /* FLIM Page */
 
 .hover-container {
