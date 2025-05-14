@@ -73,7 +73,7 @@ h2 {
 
 .hover-container {
     position:relative;
-    display: inline-block; 
+    display: block; 
 }
 .thumbnail {
     display: block;
@@ -89,13 +89,14 @@ h2 {
     height: 100%;
     z-index: 3;
 
+    text-align: center;
+
     display:flex;
     justify-content: center;
     align-items: center;
 
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
-
 }
 /* Black overlay element */
 .black-overlay {
