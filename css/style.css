@@ -80,7 +80,7 @@ canvas {
 
 .hover-container {
     position:relative;
-    display: inline-block; 
+    display: flex; 
 }
 .thumbnail {
     display: block;
@@ -103,6 +103,10 @@ canvas {
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
 
+}
+
+.overlay-text {
+    text-align: center;
 }
 /* Black overlay element */
 .black-overlay {
