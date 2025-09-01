@@ -14,7 +14,7 @@ body {
 /* Fonts and Icons and Exact Images*/
 .icons {
     fill: white;
-    padding:0px 10px;
+    padding:22px 10px;
 }
 
 .infoIcons {
@@ -80,7 +80,8 @@ canvas {
 
 .hover-container {
     position:relative;
-    display: flex; 
+    display: block; 
+
 }
 .thumbnail {
     display: block;
@@ -96,13 +97,14 @@ canvas {
     height: 100%;
     z-index: 3;
 
+    text-align: center;
+
     display:flex;
     justify-content: center;
     align-items: center;
 
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
-
 }
 
 .overlay-text {
@@ -434,11 +436,11 @@ footer nav ul {
     list-style: none;
 }
 
-footer img {
+footer nav ul li{
     transition: all 0.2s ease-in-out;
 }
 
-footer img:hover {
+footer nav ul li:hover {
     background-color: rgba(50,50,50,1);
     color: black;
 }
