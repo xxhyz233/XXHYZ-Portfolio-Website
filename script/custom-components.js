@@ -17,7 +17,7 @@ headerTemplate.innerHTML = `
 
 <header class="mobile-head sticky">
     <nav>
-        <h1><a href="./">XXHYZ<br/>LUNA CHEN</a></h1>
+        <h1><a href="./">XXHYZ</a></h1>
         <span class="material-symbols-outlined">menu     
             <ul class="works-menu">
                 <li><a class="c1" href="../pages/index.html">FILM</a></li>
