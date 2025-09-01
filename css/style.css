@@ -69,11 +69,19 @@ h2 {
     line-height: 1.5;
 }
 
+/* 3D */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
 /* FLIM Page */
 
 .hover-container {
     position:relative;
     display: block; 
+
 }
 .thumbnail {
     display: block;
@@ -97,6 +105,10 @@ h2 {
 
     opacity: 0;
     transition: opacity 0.2s ease-in-out;
+}
+
+.overlay-text {
+    text-align: center;
 }
 /* Black overlay element */
 .black-overlay {
@@ -162,7 +174,7 @@ header nav {
 
 header a {
     padding: 24px 40px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 300;
     text-decoration: none;
     color:white;
