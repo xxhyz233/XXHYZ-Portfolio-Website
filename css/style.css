@@ -254,6 +254,20 @@ header.desktop-head h1 a:hover {
 .big-video {
     margin: 2rem 0;
 }
+
+.windflower-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 2rem 0;
+}
+
+.windflower-gallery img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 /* Small Videos don't have any controls, are looped, autoplays, and muted*/
 .small-video {
     padding: 6px;
