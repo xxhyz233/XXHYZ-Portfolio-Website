@@ -3,7 +3,9 @@ const headerTemplate = document.createElement("template");
 headerTemplate.innerHTML = `
 <header class="desktop-head sticky">
     <nav>
-        <img class="signatureHead scAni" src="../media/images/signature.png"/>
+        <a class="home-link scAni" href="../pages/index.html" aria-label="XXHYZ home">
+            <img class="signatureHead" src="../media/images/signature.png" alt="XXHYZ"/>
+        </a>
         <ul class="menu">
             <li class="scAni"><a class="c1" href="../pages/index.html">FILM</a></li>
             <li class="scAni"><a class="c2" href="../pages/3dcg.html">3D/CG</a></li>
@@ -17,7 +19,7 @@ headerTemplate.innerHTML = `
 
 <header class="mobile-head sticky">
     <nav>
-        <h1><a href="./">XXHYZ</a></h1>
+        <h1><a href="../pages/index.html">XXHYZ</a></h1>
         <span class="material-symbols-outlined">menu     
             <ul class="works-menu">
                 <li><a class="c1" href="../pages/index.html">FILM</a></li>
