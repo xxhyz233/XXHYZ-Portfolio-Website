@@ -1,161 +1,136 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>XXHYZ</title>
-        <link rel="stylesheet" href="../css/style.css"/>
-        <!--Google Fonts import-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#111316">
+        <title>Film | XXHYZ</title>
+        <link rel="icon" href="../media/images/signature.png" type="image/png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <link rel="icon" href="../media/images/signature.png" type="image/x-icon"/>
-        <!--Scripts-->
-        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-        <script src="https://kit.fontawesome.com/253ef9d4b1.js" crossorigin="anonymous"></script>
-        <script src="../script/script.js" defer></script>
-        <script src="../script/custom-components.js" defer></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/film.css">
+        <script src="../script/film.js" defer></script>
+        <noscript><style>#preloader { display: none; } #main-content { opacity: 1; }</style></noscript>
     </head>
-    <body>
-        <custom-header></custom-header>
-        <div class="page-content" id="main-content">
-            <h1 class="content-title slowLoadAni">FILM</h1>
-            <a class="hover-container evanescence-card slowLoadAni" href="../works/evanescence.html" aria-label="View Evanescence (Trailer)" data-tilt data-tilt-max="6">
-                <div class="text-overlay">
-                    <p class="description overlay-text">
-                        <b>Evanescence (Trailer)</b>
-                        <br/>
-                        2026 (Uncompleted), 2 mins
-                    </p>
+    <body class="film-layout">
+        <header class="film-header">
+            <nav class="film-shell film-nav" aria-label="Main navigation">
+                <a class="film-wordmark" href="../pages/index.html">XXHYZ</a>
+                <div class="film-nav-links">
+                    <a class="film-nav-active" aria-current="page" href="../pages/index.html">Film</a>
+                    <a href="../pages/3dcg.html">3D/CG</a>
+                    <a href="../pages/moving.html">Moving</a>
+                    <a href="../pages/still.html">Still</a>
+                    <a href="../pages/interactive.html">Interactive</a>
+                    <a href="../pages/info.html">Info</a>
                 </div>
-                <div class="black-overlay"></div>
-                <img class="thumbnail" src="../media/images/3CCG/Evanescence%20(10).png" width="2560" height="1080" alt="Evanescence trailer still">
-            </a>
-            <!-- <p class="description slowLoadAni">
-                <b>Take me.</b>
-                <br/>
-                2023 / 2 mins
-            </p>
-            <div class="big-video slowLoadAni" style="padding:42.55% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/899615276?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Take me."></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-            <div class="twoPanelContainer">
-                <p class="description left-panel slowLoadAni">
-                    A catharsis of blurred emotions.
-                    <br/><br/>
-                    The final visuals emerged from various iterations and experimentations to reach a balance between NPR, glitch art, and photorealism. The muddled boundaries between the different styles are manifestations of the past and present, clear and blurry, reality and hallucination intertwining. 
-                    <br/><br/>
-                </p>
-                <p class="description right-panel slowLoadAni">
-                    XXHYZ
-                    <br/>
-                    DESOLA7ED
-                    <br/>
-                    PHONO RECORDS
-                    <br/><br/>
-                    After Effects, Premiere, Cinema 4D, Blender, Unreal Engine 5, ZBrush
-                </p>
-            </div>
-            <video loading="lazy" class="big-video slowLoadAni" width="100%" autoplay loop muted><source src="./media/videos/Takeme_4grid.mp4"></video>
-            <br/>
-            <br/>
-            <br/> -->
-            <div class="hover-container" onclick="window.location.href='../works/miracoolcm.html'" style="cursor: pointer;" data-tilt data-tilt-max="6">
-                <div class="text-overlay">
-                    <p class="description slowLoadAni overlay-text"> 
-                        <b>Miracool2025 LIVE!!!!! CM</b>
-                        <br/>
-                        2025 / 1 min
-                    </p>
+            </nav>
+        </header>
+        <div id="main-content">
+            <main class="film-shell">
+                <div class="film-masthead film-index-masthead film-grid">
+                    <h1 class="film-title">Film</h1>
+                    <div class="film-masthead-note">
+                        <p class="film-label">Selected work</p>
+                        <p>2021–2026</p>
+                    </div>
                 </div>
-                <div class="black-overlay"></div>
-                <img class="thumbnail slowLoadAni" src="../media/images/Thumbnails/MiracoolCM.png" >
+                <ul class="film-cards" aria-label="Selected films">
+                    <li>
+                        <a class="film-card" href="../works/evanescence.html">
+                            <div class="film-card-media">
+                                <img src="../media/images/film/evanescence-10.webp" alt="" fetchpriority="high" decoding="async">
+                                <p class="film-card-meta"><time datetime="2026">2026</time> · 58 sec</p>
+                            </div>
+                            <div class="film-card-caption">
+                                <h2>Evanescence</h2>
+                                <span class="film-card-format">Trailer</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="film-card" href="../works/miracoolcm.html">
+                            <div class="film-card-media">
+                                <img src="../media/images/film/miracoolcm.webp" alt="" decoding="async">
+                                <p class="film-card-meta"><time datetime="2025">2025</time> · 1 min</p>
+                            </div>
+                            <div class="film-card-caption">
+                                <h2>Miracool2025 LIVE!!!!! CM</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="film-card" href="../works/feng.html">
+                            <div class="film-card-media">
+                                <img src="../media/images/film/feng.webp" alt="" loading="lazy" decoding="async">
+                                <p class="film-card-meta"><time datetime="2025">2025</time> · 3 min</p>
+                            </div>
+                            <div class="film-card-caption">
+                                <h2 lang="zh">风.</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="film-card" href="../works/takeme.html">
+                            <div class="film-card-media">
+                                <img src="../media/images/film/takeme.webp" alt="" loading="lazy" decoding="async">
+                                <p class="film-card-meta"><time datetime="2023">2023</time> · 2 min</p>
+                            </div>
+                            <div class="film-card-caption">
+                                <h2>Take me.</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="film-card" href="../works/windflower.html">
+                            <div class="film-card-media">
+                                <img src="../media/images/film/windflower.webp" alt="" loading="lazy" decoding="async">
+                                <p class="film-card-meta"><time datetime="2025">2025</time> · 2 min</p>
+                            </div>
+                            <div class="film-card-caption">
+                                <h2>windflower.</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="film-card" href="../works/tempestroph.html">
+                            <div class="film-card-media">
+                                <img src="../media/images/film/tempestroph.webp" alt="" loading="lazy" decoding="async">
+                                <p class="film-card-meta"><time datetime="2024">2024</time> · 3 min</p>
+                            </div>
+                            <div class="film-card-caption">
+                                <h2>Tempestroph</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="film-card" href="../works/away_from_u.html">
+                            <div class="film-card-media">
+                                <img src="../media/images/film/awayfromu.webp" alt="" loading="lazy" decoding="async">
+                                <p class="film-card-meta"><time datetime="2021">2021</time> · 2 min</p>
+                            </div>
+                            <div class="film-card-caption">
+                                <h2>Away From U.</h2>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </main>
+        <footer class="film-footer">
+            <div class="film-shell film-footer-content">
+                <a class="film-wordmark" href="../pages/index.html">XXHYZ</a>
+                <nav class="film-socials" aria-label="Social media">
+                    <a href="https://www.instagram.com/xxhyz.lunachen/">Instagram</a>
+                    <a href="https://twitter.com/XXHYZ2">X</a>
+                    <a href="https://space.bilibili.com/4558677">Bilibili</a>
+                </nav>
             </div>
-
-            <div class="hover-container" onclick="window.location.href='../works/feng.html'" style="cursor: pointer;" data-tilt data-tilt-max="6">
-                <div class="text-overlay">
-                    <p class="description slowLoadAni overlay-text"> 
-                        <b>风.</b>
-                        <br/>
-                        2025 / 3 min
-                    </p>
-                </div>
-                <div class="black-overlay"></div>
-                <img class="thumbnail slowLoadAni" src="../media/images/Thumbnails/Feng.png" >
-            </div>
-            <br/>
-            <br/>
-            <div class="hover-container" onclick="window.location.href='../works/takeme.html'" style="cursor: pointer;" data-tilt data-tilt-max="6">
-                <div class="text-overlay">
-                    <p class="description slowLoadAni overlay-text"> 
-                        <b>Take me.</b>
-                        <br/>
-                        2023 / 2 min
-                    </p>
-                </div>
-                <div class="black-overlay"></div>
-                <img class="thumbnail slowLoadAni" src="../media/images/Thumbnails/Takeme.png" >
-            </div>
-            <br/>
-            <br/>
-            <div class="hover-container" onclick="window.location.href='../works/windflower.html'" style="cursor: pointer;" data-tilt data-tilt-max="6">
-                <div class="text-overlay">
-                    <p class="description slowLoadAni overlay-text"> 
-                        <b>windflower.</b>
-                        <br/>
-                        2025 / 2 min
-                    </p>
-                </div>
-                <div class="black-overlay"></div>
-                <img class="thumbnail slowLoadAni" src="../media/images/Thumbnails/windflower.png" >
-            </div>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <div 
-            class="hover-container"
-            onclick="window.location.href='../works/tempestroph.html'"
-            style="cursor: pointer;"
-            data-tilt
-            data-tilt-max="6"
-            >
-                <div class="text-overlay">
-                    <p class="description slowLoadAni overlay-text"> 
-                        <b>Tempestroph</b>
-                        <br/>
-                        2024 / 3 mins
-                    </p>
-                </div>
-                <div class="black-overlay"></div>
-                <img class="thumbnail slowLoadAni" src="../media/images/Thumbnails/Tempestroph.png" >
-            </div>
-            <br/>
-            <br/>
-            <div class="hover-container" onclick="window.location.href='../works/away_from_u.html'" style="cursor: pointer;" data-tilt data-tilt-max="6">
-                <div class="text-overlay">
-                    <p class="description slowLoadAni overlay-text"> 
-                        <b>Away From U.</b>
-                        <br/>
-                        2021 / 2 mins
-                    </p>
-                </div>
-                <div class="black-overlay"></div>
-                <img class="thumbnail slowLoadAni" src="../media/images/Thumbnails/AwayFromU.png" >
-            </div>
-            <custom-footer></custom-footer>
+        </footer>
         </div>
-
-        
-
-        <div class="fullscreen-view">
-            <span class="close">&times;</span>
-            <img class="fullscreen-image" src="" alt="Fullscreen Image">
-            <video class="fullscreen-video" src="" alt="Fullscreen Image">
-        </div>
-
         <div id="preloader">
             <img src="../media/images/Preload.gif" alt="Loading Animation" id="preloader-logo">
         </div>
     </body>
-    <!-- Vanilla Tilt-->
-    <script type="text/javascript" src="../script/vanilla-tilt.js"></script>
 </html>
