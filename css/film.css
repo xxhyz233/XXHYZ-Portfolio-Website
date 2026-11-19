@@ -1,17 +1,19 @@
 .film-layout {
-    --ink: #f4f4ef;
-    --muted: #b9bdc6;
-    --accent: #c5cfff;
-    --background: #111316;
-    --surface: #191c22;
-    --line: #363b44;
-    --edge: clamp(1rem, 4.5vw, 5.5rem);
-    --gutter: clamp(0.875rem, 2vw, 2rem);
-    --display: "Space Grotesk", "Segoe UI", sans-serif;
+    --ink: #f5f5f5;
+    --muted: #b7b7b7;
+    --background: #101010;
+    --surface: #1d1d1d;
+    --line: #535353;
+    --rule: #8c8c8c;
+    --edge: clamp(1rem, 3.2vw, 4.5rem);
+    --gutter: clamp(0.625rem, 1.1vw, 1.125rem);
+    --columns: repeat(12, minmax(0, 1fr));
+    --split: 8;
+    --display: "Satoshi", "Segoe UI", sans-serif;
     --reading: "Source Serif 4", Georgia, serif;
     background: var(--background);
     color: var(--ink);
-    font: 1rem/1.6 var(--reading);
+    font: 0.9375rem/1.6 var(--reading);
     color-scheme: dark;
 }
 
@@ -25,13 +27,16 @@
 }
 
 .film-layout :focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--ink);
     outline-offset: 4px;
 }
 
-.film-grid {
+.film-grid,
+.film-header .film-nav,
+.film-cards,
+.film-gallery {
     display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-columns: var(--columns);
     gap: var(--gutter);
 }
 
@@ -44,13 +49,20 @@
 }
 
 .film-header .film-nav {
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: var(--gutter);
     height: auto;
-    min-height: 4.625rem;
+    min-height: 3.75rem;
     padding: 0;
+}
+
+.film-nav .film-wordmark {
+    grid-column: 1 / var(--split);
+    justify-self: start;
+}
+
+.film-nav-links {
+    grid-column: var(--split) / -1;
+    justify-content: space-between;
 }
 
 .film-nav-links,
@@ -58,7 +70,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.4rem clamp(0.75rem, 2.8vw, 2.75rem);
+    gap: 0.4rem clamp(0.625rem, 1.2vw, 1.25rem);
 }
 
 .film-header a,
@@ -67,21 +79,21 @@
     padding: 0;
     background: transparent;
     text-decoration: none;
-    font: 500 0.875rem/1.4 var(--display);
+    font: 700 0.8125rem/1.4 var(--display);
     transition: color 150ms ease;
 }
 
 .film-header a:hover,
 .film-footer a:hover,
-.film-back:hover,
-.film-header .film-nav-active {
+.film-back:hover {
     background: transparent;
-    color: var(--accent);
+    color: var(--muted);
 }
 
 .film-header .film-nav-active {
+    color: var(--ink);
     text-decoration: underline;
-    text-underline-offset: 0.42em;
+    text-underline-offset: 0.35em;
 }
 
 .film-layout .film-wordmark {
@@ -91,119 +103,133 @@
 
 .film-masthead {
     align-items: end;
-    padding-block: clamp(3.5rem, 8vw, 8.5rem) clamp(1.4rem, 2.8vw, 3rem);
-    border-bottom: 1px solid var(--line);
+    padding-block: clamp(2rem, 3.75vw, 4.5rem) clamp(1.25rem, 2.35vw, 2.375rem);
+    border-bottom: 1px solid var(--rule);
 }
 
 .film-title {
-    grid-column: span 8;
-    font: 500 clamp(3.5rem, 9.6vw, 9rem)/0.9 var(--display);
-    letter-spacing: -0.075em;
+    font: 700 clamp(5.25rem, 16vw, 15.5rem)/0.83 var(--display);
+    letter-spacing: -0.055em;
+}
+
+.film-index-masthead .film-title {
+    grid-column: 1 / var(--split);
 }
 
 .film-masthead-note {
-    grid-column: 10 / -1;
-    padding-left: clamp(0.6rem, 1.1vw, 1.1rem);
+    grid-column: var(--split) / -1;
+    display: grid;
+    align-self: stretch;
+    align-content: end;
+    gap: 0.15rem;
+    padding-inline-start: clamp(0.6rem, 1.3vw, 1.35rem);
     border-left: 1px solid var(--line);
     color: var(--muted);
 }
 
 .film-label {
-    color: var(--accent);
-    font: 500 0.875rem/1.4 var(--display);
+    color: var(--ink);
+    font: 700 0.75rem/1.4 var(--display);
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
 }
 
 .film-cards,
 .film-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--gutter);
     list-style: none;
 }
 
 .film-cards {
-    margin-block: var(--gutter) clamp(4rem, 8vw, 8rem);
-    row-gap: clamp(1.75rem, 3.5vw, 3.75rem);
+    container-type: inline-size;
+    margin-block: var(--gutter) clamp(3.25rem, 7vw, 7rem);
 }
 
-.film-card,
-.film-card-media,
-.film-still {
-    display: block;
+.film-cards > li:nth-child(odd) {
+    grid-column: 1 / var(--split);
+}
+
+.film-cards > li:nth-child(even) {
+    grid-column: var(--split) / -1;
 }
 
 .film-card {
+    display: grid;
+    align-items: end;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    width: 100%;
+    min-height: clamp(10rem, 25cqw, 25rem);
+    background-color: var(--surface);
     text-decoration: none;
 }
 
-.film-card-media {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 64 / 27;
-    background: var(--surface);
-}
-
-.film-card-media img {
+.film-card img {
     display: block;
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 240ms ease-out;
 }
 
-.film-card-meta {
+.film-card::before {
+    content: "";
     position: absolute;
-    right: 0;
-    bottom: 0;
-    padding: 0.32rem 0.75rem;
-    background: #111316;
-    color: var(--ink);
-    font-size: 0.9rem;
+    inset: 0;
+    z-index: 1;
+    background-color: rgb(0 0 0 / 50%);
+    opacity: 0;
+    transition: opacity 180ms ease-out;
 }
 
-.film-card-caption {
+.film-card-overlay {
+    position: relative;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     flex-wrap: wrap;
-    gap: 0.25rem 0.8rem;
-    padding-block: 0.78rem;
-    border-bottom: 1px solid var(--line);
+    gap: 0.1rem 0.9rem;
+    padding: clamp(1.75rem, 3vw, 3rem) var(--gutter) 0.65rem;
+    background: linear-gradient(to top, rgb(0 0 0 / 88%), rgb(0 0 0 / 64%) 45%, transparent);
+    color: var(--ink);
+    font: 400 0.8125rem/1.4 var(--reading);
 }
 
-.film-card-caption h2 {
-    font: 500 clamp(1.22rem, 2vw, 1.85rem)/1.2 var(--display);
-    letter-spacing: -0.04em;
-    transition: color 150ms ease;
+.film-card-overlay h2 {
+    font: 500 0.975rem/1.25 var(--reading);
 }
 
-.film-card-format {
-    color: var(--muted);
+.film-card:focus-visible::before {
+    opacity: 1;
 }
 
-.film-card:hover h2,
-.film-card:focus-visible h2 {
-    color: var(--accent);
-}
-
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-    .film-card:hover .film-card-media img {
-        transform: scale(1.025);
+@media (hover: hover) {
+    .film-card:hover::before {
+        opacity: 1;
     }
 }
 
 .film-detail-masthead {
-    padding-top: clamp(1.75rem, 4vw, 4rem);
-    row-gap: clamp(1.2rem, 3vw, 2.8rem);
+    padding-top: clamp(1.25rem, 2.5vw, 2.5rem);
+    row-gap: clamp(1.15rem, 2.6vw, 2.75rem);
 }
 
 .film-detail-masthead .film-title {
-    font-size: clamp(2.8rem, 7.6vw, 7.5rem);
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: clamp(2rem, 12.6vw, 13rem);
+}
+
+.film-detail-masthead .film-masthead-note {
+    grid-row: 1;
 }
 
 .film-back {
-    grid-column: 1 / -1;
+    grid-column: 1 / var(--split);
     justify-self: start;
+    align-self: end;
     text-decoration: underline;
     text-underline-offset: 0.25em;
 }
@@ -217,7 +243,7 @@
     width: 100%;
     aspect-ratio: 64 / 27;
     min-height: 12.5rem;
-    background: #070809;
+    background: #070707;
 }
 
 .film-trailer-poster,
@@ -246,17 +272,18 @@
     gap: 0.7rem;
     padding: 0.8rem 1.05rem;
     transform: translate(-50%, -50%);
-    border: 1px solid #9da4b5;
-    background: #111316;
-    font: 500 0.95rem/1.3 var(--display);
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--background);
+    font: 700 0.875rem/1.3 var(--display);
     white-space: nowrap;
     transition: background-color 150ms ease, color 150ms ease;
 }
 
 .film-trailer-poster:hover .film-play,
 .film-trailer-poster:focus-visible .film-play {
-    background: var(--ink);
-    color: var(--background);
+    background: var(--background);
+    color: var(--ink);
 }
 
 .film-play-icon {
@@ -270,7 +297,7 @@
     margin-top: 0.55rem;
     color: var(--muted);
     text-align: right;
-    font-size: 0.95rem;
+    font-size: 0.8125rem;
 }
 
 .film-trailer figcaption a {
@@ -281,23 +308,23 @@
 .film-stills-section {
     padding-top: clamp(1.25rem, 3vw, 2.25rem);
     margin-bottom: clamp(3rem, 7vw, 7rem);
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--rule);
 }
 
 .film-section-title {
-    font: 500 clamp(1.4rem, 2.8vw, 2.5rem)/1.05 var(--display);
-    letter-spacing: -0.045em;
+    font: 700 clamp(2rem, 4vw, 4rem)/0.97 var(--display);
+    letter-spacing: -0.055em;
 }
 
 .film-story .film-section-title,
 .film-process-intro .film-section-title {
-    grid-column: span 3;
+    grid-column: span 4;
 }
 
 .film-copy {
-    grid-column: 4 / span 5;
-    max-width: 54ch;
-    font-size: clamp(1.03rem, 1.35vw, 1.25rem);
+    grid-column: 6 / span 4;
+    max-width: 58ch;
+    color: var(--muted);
 }
 
 .film-copy p + p {
@@ -305,8 +332,8 @@
 }
 
 .film-credits {
-    grid-column: 10 / -1;
-    padding-left: clamp(0.6rem, 1.1vw, 1.1rem);
+    grid-column: 11 / -1;
+    padding-inline-start: clamp(0.6rem, 1.1vw, 1.1rem);
     border-left: 1px solid var(--line);
     align-self: start;
 }
@@ -317,10 +344,15 @@
 
 .film-stills-section .film-section-title,
 .film-process-intro {
-    margin-bottom: var(--gutter);
+    margin-bottom: clamp(1.2rem, 2vw, 2rem);
+}
+
+.film-gallery > li {
+    grid-column: span 6;
 }
 
 .film-still {
+    display: block;
     background: var(--surface);
     cursor: zoom-in;
 }
@@ -339,12 +371,12 @@
 
 .film-process {
     padding-block: clamp(2.5rem, 6vw, 6rem);
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--rule);
     background: var(--surface);
 }
 
 .film-process-intro .film-copy {
-    grid-column: 4 / span 7;
+    grid-column: 6 / span 5;
 }
 
 .film-process-gallery img {
@@ -363,7 +395,7 @@
     box-sizing: border-box;
     padding: 4rem var(--edge) 1.25rem;
     border: 0;
-    background: #08090bed;
+    background: rgb(8 8 8 / 94%);
     color: var(--ink);
 }
 
@@ -405,7 +437,7 @@
 .film-footer {
     padding: 1.4rem 0;
     border-top: 1px solid var(--line);
-    background: #0e1013;
+    background: #0a0a0a;
 }
 
 .film-footer-content {
@@ -420,71 +452,68 @@
     color: var(--muted);
 }
 
-@media (max-width: 48rem) {
-    .film-grid {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-    }
-
-    .film-title {
-        grid-column: span 4;
-    }
-
-    .film-masthead-note {
+@media (max-width: 56rem) {
+    .film-nav .film-wordmark {
         grid-column: span 2;
     }
 
+    .film-nav-links {
+        grid-column: 4 / -1;
+    }
+}
+
+@media (max-width: 48rem) {
     .film-story .film-section-title,
     .film-process-intro .film-section-title {
-        grid-column: 1 / -1;
+        grid-column: span 5;
     }
 
-    .film-copy {
-        grid-column: span 4;
+    .film-story .film-copy,
+    .film-process-intro .film-copy {
+        grid-column: 7 / -1;
     }
 
     .film-credits {
-        grid-column: span 2;
+        grid-column: 7 / -1;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 
-    .film-process-intro .film-copy {
-        grid-column: 1 / -1;
+    .film-credits div + div {
+        margin-top: 0;
     }
 }
 
 @media (max-width: 36rem) {
+    .film-layout {
+        --columns: repeat(6, minmax(0, 1fr));
+        --split: 4;
+    }
+
     .film-header .film-nav {
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: center;
-        gap: 0.75rem;
-        padding-block: 1rem;
+        gap: 0.8rem var(--gutter);
+        padding-block: 0.9rem;
     }
 
-    .film-nav-links {
-        width: 100%;
-        justify-content: space-between;
-        column-gap: 0.5rem;
-    }
-
-    .film-index-masthead .film-title,
-    .film-index-masthead .film-masthead-note {
-        grid-column: span 3;
-    }
-
-    .film-detail-masthead .film-title,
-    .film-detail-masthead .film-masthead-note,
+    .film-nav-links,
+    .film-story .film-section-title,
+    .film-process-intro .film-section-title,
     .film-story .film-copy,
-    .film-credits {
+    .film-process-intro .film-copy,
+    .film-credits,
+    .film-cards > li:nth-child(n),
+    .film-gallery > li {
         grid-column: 1 / -1;
     }
 
-    .film-detail-masthead .film-title {
-        font-size: clamp(2rem, 14vw, 3.4rem);
+    .film-index-masthead .film-title {
+        font-size: clamp(3.5rem, 19vw, 7rem);
     }
 
-    .film-cards,
-    .film-gallery {
-        grid-template-columns: minmax(0, 1fr);
+    .film-card {
+        min-height: 8rem;
+        aspect-ratio: 64 / 27;
     }
 }
 
@@ -496,7 +525,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .film-card *,
+    .film-card::before,
     .film-still img,
     .film-play,
     .film-header a,
