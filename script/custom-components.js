@@ -4,13 +4,13 @@ headerTemplate.innerHTML = `
 <header class="desktop-head sticky">
     <nav>
         <a class="home-link scAni" href="../pages/index.html" aria-label="XXHYZ home">
-            <img class="signatureHead" src="../media/images/signature.png" alt="XXHYZ"/>
+            <img class="signatureHead" src="../media/images/branding/signature-400.png" alt="XXHYZ"/>
         </a>
         <ul class="menu">
-            <li class="scAni"><a class="c1" href="../pages/index.html">FILM</a></li>
+            <li class="scAni"><a class="c1" href="../pages/index.html">CG/3D DESIGN</a></li>
             <li class="scAni"><a class="c2" href="../pages/3dcg.html">3D/CG</a></li>
             <li class="scAni"><a class="c3" href="../pages/moving.html">MOVING</a></li>
-            <li class="scAni"><a class="c4" href="../pages/still.html">STILL</a></li>
+            <li class="scAni"><a class="c4" href="../pages/art.html">ART</a></li>
             <li class="scAni"><a class="c5" href="../pages/interactive.html">INTERACTIVE</a></li>
             <li class="scAni"><a href="../pages/info.html">INFO</a></li>
         </ul>
@@ -22,10 +22,10 @@ headerTemplate.innerHTML = `
         <h1><a href="../pages/index.html">XXHYZ</a></h1>
         <span class="material-symbols-outlined">menu     
             <ul class="works-menu">
-                <li><a class="c1" href="../pages/index.html">FILM</a></li>
+                <li><a class="c1" href="../pages/index.html">CG/3D DESIGN</a></li>
                 <li><a class="c2" href="../pages/3dcg.html">3D/CG</a></li>
                 <li><a class="c3" href="../pages/moving.html">MOVING</a></li>
-                <li><a class="c4" href="../pages/still.html">STILL</a></li>
+                <li><a class="c4" href="../pages/art.html">ART</a></li>
                 <li><a class="c5" href="../pages/interactive.html">INTERACTIVE</a></li>
                 <li><a href="../pages/info.html">INFO</a></li>
             </ul>
@@ -46,21 +46,14 @@ window.customElements.define("custom-header", CustomHeader);
 // Footer template
 const footerTemplate = document.createElement("template");
 footerTemplate.innerHTML = `
-<footer >
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="https://www.instagram.com/xxhyz.lunachen/"><i class="fa-brands fa-instagram fa-xl icons" style="color: #ffffff;"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/XXHYZ2"><i class="fa-brands fa-x-twitter fa-xl icons" style="color: #ffffff;"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://space.bilibili.com/4558677"><i class="fa-brands fa-bilibili fa-xl icons" style="color: #ffffff;"></i></a>
-                        </li>
-                    </ul>
-                </nav>
-            </footer>
+    <footer class="legacy-site-footer">
+        <nav aria-label="Contact and social media">
+            <a href="mailto:zejun.c@xxhyz.net"><img src="../media/icons/cg-design/mail.svg" alt="Email"></a>
+            <a href="https://twitter.com/XXHYZ2"><img src="../media/icons/cg-design/x.svg" alt="X"></a>
+            <a href="https://space.bilibili.com/4558677"><img src="../media/icons/cg-design/bilibili.svg" alt="Bilibili"></a>
+            <a href="https://www.instagram.com/xxhyz.zzz/"><img src="../media/icons/cg-design/instagram.svg" alt="Instagram"></a>
+        </nav>
+    </footer>
 `;
 
 class CustomFooter extends HTMLElement {

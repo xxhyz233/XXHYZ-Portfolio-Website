@@ -2,17 +2,21 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="referrer" content="strict-origin-when-cross-origin">
         <title>XXHYZ</title>
         <link rel="stylesheet" href="../css/style.css"/>
+        <link rel="stylesheet" href="../css/site.css">
         <!--Google Fonts import-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-        <script src="https://kit.fontawesome.com/253ef9d4b1.js" crossorigin="anonymous"></script>
+        <script src="../script/gsap.min.js" defer></script>
+        <script src="https://kit.fontawesome.com/253ef9d4b1.js" crossorigin="anonymous" async></script>
         <script src="../script/script.js" defer></script>
         <script src="../script/custom-components.js" defer></script>
+        <script src="../script/cg-design.js" defer></script>
+        <script src="../script/site.js" defer></script>
     </head>
     <body>
         <custom-header></custom-header>
@@ -23,13 +27,16 @@
             <div class="container">
                 <div class="column two-Columns">
                     <div class="column-item loadAni">
-                        <iframe class="YoutubeVideo" width="100%" height="100%" src="https://www.youtube.com/embed/EtN1sA-gI9Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <div class="archive-video">
+                            <a href="https://www.youtube.com/watch?v=EtN1sA-gI9Y" data-youtube-id="EtN1sA-gI9Y" data-player-title="Dimensionalize Nervous Breakdown" aria-label="Play Dimensionalize Nervous Breakdown">PLAY</a>
+                        </div>
+                        <p class="caption"><a href="https://www.youtube.com/watch?v=EtN1sA-gI9Y">Watch on YouTube</a></p>
                     </div>
                 </div>
                 <div class="column two-Columns">
                     <div class="column-item loadAni">
                         <div class="column-item loadAni">
-                            <video loading="lazy" class="small-video" width="100%" autoplay loop muted><source src="../media/videos/Dimensionalize_4grid.mp4"></video>
+                            <video loading="lazy" class="small-video" width="1920" height="1080" data-viewport-autoplay preload="none" playsinline loop muted><source src="../media/videos/art/dimensionalize/motion-study.mp4"></video>
                         </div>
                     </div>
                 </div>
@@ -38,13 +45,16 @@
             <div class="container">
                 <div class="column two-Columns">
                     <div class="column-item loadAni">
-                        <iframe class="YoutubeVideo" width="100%" height="100%" src="https://www.youtube.com/embed/HwzxmlSyk2M?si=lQ5xKnxwWHFFW9Zu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <div class="archive-video">
+                            <a href="https://www.youtube.com/watch?v=HwzxmlSyk2M" data-youtube-id="HwzxmlSyk2M" data-player-title="Heliov" aria-label="Play Heliov">PLAY</a>
+                        </div>
+                        <p class="caption"><a href="https://www.youtube.com/watch?v=HwzxmlSyk2M">Watch on YouTube</a></p>
                     </div>
                 </div>
                 <div class="column two-Columns">
                     <div class="column-item loadAni">
                         <div class="column-item loadAni">
-                            <video loading="lazy" class="small-video" width="100%" autoplay loop muted><source src="../media/videos/MOVING/Heliov_4grid.mp4"></video>
+                            <video loading="lazy" class="small-video" width="1920" height="810" data-viewport-autoplay preload="none" playsinline loop muted><source src="../media/videos/motion-studies/heliov-grid.mp4"></video>
                         </div>
                     </div>
                 </div>
@@ -52,28 +62,28 @@
             <div class="container">
                 <div class="column two-Columns">
                     <div class="column-item loadAni">
-                        <video loading="lazy" class="small-video" width="100%" autoplay loop muted><source src="../media/videos/MOVING/Glitchy.mp4"></video>
+                        <video loading="lazy" class="small-video" width="1920" height="1080" data-viewport-autoplay preload="none" playsinline loop muted><source src="../media/videos/motion-studies/glitchy.mp4"></video>
                         <p class="caption"></p>
                     </div>
                     <div class="column-item loadAni">
-                        <video loading="lazy" class="small-video" width="100%" autoplay loop muted><source src="../media/videos/MOVING/PointCloudTest.mp4"></video>
+                        <video loading="lazy" class="small-video" width="1920" height="810" data-viewport-autoplay preload="none" playsinline loop muted><source src="../media/videos/motion-studies/point-cloud-test.mp4"></video>
                         <p class="caption">Point Cloud Experiment</p>
                     </div>
                     <div class="column-item loadAni">
-                        <video loading="lazy" class="small-video" width="100%" autoplay loop muted><source src="../media/videos/MOVING/cytus.mp4"></video>
+                        <video loading="lazy" class="small-video" width="1280" height="720" data-viewport-autoplay preload="none" playsinline loop muted><source src="../media/videos/motion-studies/cytus.mp4"></video>
                         <p class="caption">Cytus 2 Reference</p>
                     </div>
                 </div>
                 <div class="column two-Columns">   
                     <div class="column-item loadAni">
-                        <video loading="lazy" class="big-video" width="100%" controls autoplay muted><source src="../media/videos/MOVING/Zhongjianhui.mp4"></video>
+                        <video loading="lazy" class="big-video" width="1920" height="1080" controls data-viewport-autoplay preload="none" playsinline muted><source src="../media/videos/motion-studies/zhongjianhui.mp4"></video>
                         <p class="caption">Music: 中间灰 - 不鱼p</p>
                     </div>
                     <div class="column-item loadAni">
-                        <video loading="lazy" class="small-video" width="100%" autoplay loop muted><source src="../media/videos/MOVING/TimeTraveller.mp4"></video>
+                        <video loading="lazy" class="small-video" width="1920" height="816" data-viewport-autoplay preload="none" playsinline loop muted><source src="../media/videos/motion-studies/time-traveller.mp4"></video>
                     </div>
                     <div class="column-item loadAni">
-                        <video loading="lazy" class="small-video" width="100%" autoplay loop muted><source src="../media/videos/MOVING/AppledanceCut.mp4"></video>
+                        <video loading="lazy" class="small-video" width="1920" height="816" data-viewport-autoplay preload="none" playsinline loop muted><source src="../media/videos/motion-studies/apple-dance.mp4"></video>
                     </div>
                 </div>
             </div>  
@@ -86,9 +96,6 @@
             <video class="fullscreen-video" src="" alt="Fullscreen Image">
         </div>
         
-        <div id="preloader">
-            <img src="../media/images/Preload.gif" alt="Loading Animation" id="preloader-logo">
-        </div>
 
     </body>
 </html>
