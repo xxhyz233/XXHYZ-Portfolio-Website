@@ -32,7 +32,7 @@ columnItem.forEach((item) => {
     }
     else if (hasImg) {
       const image = item.querySelector("img");
-      const imgSrc = image.dataset.fullSrc || image.src;
+      const imgSrc = image.dataset.fullSrc || image.currentSrc || image.dataset.mediaSrc || image.src;
       fullscreenImage.src = imgSrc;
       fullscreenImage.style.display = 'block';
       fullscreenVideo.src = '';

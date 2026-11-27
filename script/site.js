@@ -1,6 +1,8 @@
 (() => {
   const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const loaderImage = new URL('../media/images/branding/preloader.webp', document.currentScript.src);
+  const autoplaySelector = '[data-viewport-autoplay], .cg-project-video, .cg-about-showreel';
+  const leadImage = document.querySelector(':is(main, #main-content) img[fetchpriority="high"]');
 
   function showInitialLoader() {
     if (reducedMotion.matches) return;
@@ -22,7 +24,6 @@
     loader.append(logo);
     document.body.append(loader);
 
-    const leadImage = document.querySelector('main img[fetchpriority="high"]');
     const earliestFinish = performance.now() + 220;
     let fadeTimer;
 
@@ -73,8 +74,79 @@
     targets.forEach((target) => observer.observe(target));
   }
 
+  function revealImage(image) {
+    image.dataset.mediaState = 'loading';
+    return image.decode().then(() => {
+      image.dataset.mediaState = 'ready';
+    }, () => {
+      image.dataset.mediaState = 'error';
+    });
+  }
+
+  function initMediaLoading() {
+    const leadReady = leadImage && !leadImage.complete ? revealImage(leadImage) : Promise.resolve();
+    const media = document.querySelectorAll(`img[data-media-src], ${autoplaySelector}`);
+    const anchors = new Map();
+    const pending = new Set();
+    let draining = false;
+    const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    async function start(item) {
+      if (item instanceof HTMLVideoElement) {
+        if (item.dataset.mediaPoster) {
+          item.poster = item.dataset.mediaPoster;
+          // Give the poster request a head start before autoplay can compete with it.
+          await wait(120);
+        }
+        item.dispatchEvent(new Event('site-media-eligible'));
+        return;
+      }
+
+      if (item.dataset.mediaSrcset) item.srcset = item.dataset.mediaSrcset;
+      item.src = item.dataset.mediaSrc;
+      // A stalled image can finish independently while the queue continues below it.
+      await Promise.race([revealImage(item), wait(160)]);
+    }
+
+    async function drain() {
+      if (draining) return;
+      draining = true;
+      await Promise.race([leadReady, wait(160)]);
+
+      while (pending.size) {
+        const [anchor] = Array.from(pending, (item) => [item, item.getBoundingClientRect()])
+          .sort(([, a], [, b]) => a.top - b.top || a.left - b.left)[0];
+        pending.delete(anchor);
+        observer?.unobserve(anchor);
+        await start(anchors.get(anchor));
+      }
+
+      draining = false;
+    }
+
+    const observer = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
+      for (const { target, isIntersecting } of entries) {
+        if (isIntersecting) pending.add(target);
+        else pending.delete(target);
+      }
+      drain();
+    }, { rootMargin: '0px 0px 220px' }) : null;
+
+    for (const item of media) {
+      item.hidden = false;
+      const anchor = item.closest(
+        '.cg-design-project-media, .cg-design-still, .cg-design-trailer-frame, .cg-project-video-preview'
+      ) || item;
+      anchors.set(anchor, item);
+      if (observer) observer.observe(anchor);
+      else pending.add(anchor);
+    }
+    if (!observer) drain();
+  }
+
   function initViewportVideos(videos) {
     const visible = new Set();
+    const eligible = new WeakSet();
     const isManual = (video) => video.matches('.cg-project-video') && video.controls;
 
     function sync(video) {
@@ -87,6 +159,7 @@
       if (document.hidden || reducedMotion.matches) {
         video.pause();
       } else {
+        if (!eligible.has(video)) return;
         if (video.dataset.src && !video.hasAttribute('src')) video.src = video.dataset.src;
         video.play().catch(() => {});
       }
@@ -110,6 +183,13 @@
     }) : null;
 
     for (const video of videos) {
+      video.addEventListener('playing', () => {
+        video.dataset.siteFrame = '';
+      }, { once: true });
+      video.addEventListener('site-media-eligible', () => {
+        eligible.add(video);
+        if (visible.has(video)) sync(video);
+      }, { once: true });
       if (observer) {
         observer.observe(video);
       } else if (video.matches('.cg-about-showreel')) {
@@ -126,6 +206,7 @@
   showInitialLoader();
   if ('IntersectionObserver' in window) initScrollFades();
 
-  const videos = document.querySelectorAll('[data-viewport-autoplay], .cg-project-video, .cg-about-showreel');
+  const videos = document.querySelectorAll(autoplaySelector);
   if (videos.length) initViewportVideos(videos);
+  initMediaLoading();
 })();

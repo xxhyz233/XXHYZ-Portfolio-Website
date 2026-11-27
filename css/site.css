@@ -6,11 +6,11 @@
     place-items: center;
     background: #000;
     pointer-events: none;
+    transition: opacity 180ms ease-out;
 }
 
 .site-preloader.is-finished {
     opacity: 0;
-    transition: opacity 180ms ease-out;
 }
 
 .site-preloader img {
@@ -24,7 +24,34 @@ video[data-viewport-autoplay] {
     height: auto;
 }
 
+img[data-media-src][hidden] {
+    display: none !important;
+}
+
 @media (prefers-reduced-motion: no-preference) {
+    main,
+    #main-content,
+    .site-preloader img {
+        animation: site-page-fade 220ms ease-out;
+    }
+
+    img[data-media-src]:not([data-media-state]),
+    img[data-media-state="loading"] {
+        opacity: 0;
+    }
+
+    img[data-media-state="ready"] {
+        animation: site-media-fade 240ms ease-out;
+    }
+
+    video[data-site-frame] {
+        animation: site-video-fade 220ms ease-out;
+    }
+
+    video[data-media-poster] {
+        --site-frame-opacity: 0.8;
+    }
+
     [data-scroll-reveal="pending"]:not(:focus-within) {
         opacity: 0.35;
     }
@@ -32,6 +59,20 @@ video[data-viewport-autoplay] {
     [data-scroll-reveal="visible"]:not(:focus-within) {
         animation: site-scroll-fade 320ms ease-out;
     }
+}
+
+@keyframes site-page-fade {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
+}
+
+@keyframes site-media-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes site-video-fade {
+    from { opacity: var(--site-frame-opacity, 0); }
 }
 
 @keyframes site-scroll-fade {

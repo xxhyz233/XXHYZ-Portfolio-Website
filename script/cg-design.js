@@ -32,7 +32,8 @@ document.querySelectorAll('a[data-embed], a[data-youtube-id], a[data-video-src]'
       video.controls = true;
       video.playsInline = true;
       video.preload = 'none';
-      video.poster = trailerPoster.querySelector('img').src;
+      const poster = trailerPoster.querySelector('img');
+      video.poster = poster.currentSrc || poster.dataset.mediaSrc || poster.src;
       video.src = videoSrc;
       trailerPoster.replaceWith(video);
       video.focus({ preventScroll: true });
@@ -90,7 +91,7 @@ if (lightbox && typeof lightbox.showModal === 'function') {
     activeImage?.removeAttribute('src');
     activeImage = fullImage;
     enlargedImage.alt = thumbnail.alt;
-    enlargedImage.src = thumbnail.currentSrc || thumbnail.src;
+    enlargedImage.src = thumbnail.currentSrc || thumbnail.dataset.mediaSrc || thumbnail.src;
     imageStatus.textContent = 'Loading full image…';
     if (galleryCount) galleryCount.textContent = `${activeIndex + 1} / ${gallery.length}`;
 
