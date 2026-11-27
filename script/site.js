@@ -85,6 +85,15 @@
 
   function initMediaLoading() {
     const leadReady = leadImage && !leadImage.complete ? revealImage(leadImage) : Promise.resolve();
+    for (const image of document.querySelectorAll('img[data-media-fade]')) {
+      if (image.complete) continue;
+      image.dataset.mediaState = 'loading';
+      image.addEventListener('load', () => revealImage(image), { once: true });
+      image.addEventListener('error', () => {
+        image.dataset.mediaState = 'error';
+      }, { once: true });
+    }
+
     const media = document.querySelectorAll(`img[data-media-src], ${autoplaySelector}`);
     const anchors = new Map();
     const pending = new Set();

@@ -1,0 +1,11 @@
+/css/site.css
+  Cache-Control: public, max-age=0, must-revalidate
+
+/script/site.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/script/cg-design.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/script/script.js
+  Cache-Control: public, max-age=0, must-revalidate
