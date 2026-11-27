@@ -36,7 +36,7 @@ composer.addPass(outlinePass);
 // Load the glb model
 const loader = new GLTFLoader();
 let banana = null;
-loader.load( './media/3d/banana.glb', function (gltf) {
+loader.load( './media/3d/banana/banana.glb', function (gltf) {
     banana = gltf.scene;
     banana.position.z = 0;
     banana.rotation.y = 90;

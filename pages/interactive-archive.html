@@ -1,0 +1,96 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+        <title>XXHYZ</title>
+        <link rel="stylesheet" href="../css/style.css"/>
+        <link rel="stylesheet" href="../css/site.css">
+        <!--Google Fonts import-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <script src="../script/gsap.min.js" defer></script>
+        <script src="https://kit.fontawesome.com/253ef9d4b1.js" crossorigin="anonymous" async></script>
+        <script src="../script/script.js" defer></script>
+        <script src="../script/custom-components.js" defer></script>
+        <script src="../script/cg-design.js" defer></script>
+        <script src="../script/site.js" defer></script>
+    </head>
+    <body>
+        <custom-header></custom-header>
+        <div class="page-content" id="main-content">
+            <h1 class="content-title loadAni">INTERACTIVE</h1>
+            <p class="description loadAni">Interactive/Immersive Art using Processing, TouchDesigner, Unreal Engine, ComfyUI w. Stable Diffusion + Control Net, Azure Kinect...</p>
+            <br/>
+            <h2 class="alignCenter loadAni">TouchDesigner Works</h2>
+            <br/><br/>
+            <div class="archive-video">
+                <a href="https://www.youtube.com/watch?v=FuLv18FSnx0" data-youtube-id="FuLv18FSnx0" data-player-title="Immersive installation at Amster Yard" aria-label="Play Immersive installation at Amster Yard">PLAY</a>
+            </div>
+            <p class="caption"><a href="https://www.youtube.com/watch?v=FuLv18FSnx0">Watch on YouTube</a></p>
+            <p class="caption">Immersive Installation at Amster Yard, New York<br>Cinema 4D + Redshift for 3D Render, and TouchDesigner for Post-Processing</p>
+            <br/><br/>
+            <div class="archive-video">
+                <video controls playsinline preload="none" aria-label="AV Interactive VJ at Live Mania"
+                    poster="../media/images/interactive/live-mania/cover.webp" src="../media/videos/interactive/live-mania/performance.mp4"></video>
+            </div>
+            <p class="caption"><a href="https://www.youtube.com/watch?v=Xp81_VH0qxI">Watch on YouTube</a></p>
+            <p class="caption">Live Performance Interactive VJ at 音波狂潮上海 <br>Azure Kinect motion capture in UE5, control/post-process in TouchDesigner</p>
+            <br/><br/>
+            <div class="archive-video">
+                <video controls playsinline preload="none" aria-label="AV Performance for Chen Zhiyi Orchestra"
+                    poster="../media/images/interactive/chen-zhiyi-orchestra/cover.webp" src="../media/videos/interactive/chen-zhiyi-orchestra/performance.mp4"></video>
+            </div>
+            <p class="caption"><a href="https://www.youtube.com/watch?v=DdTL6vgRabg">Watch on YouTube</a></p>
+            <p class="caption">Audio-Visual Performance for Chen Zhiyi Orchestra, Shanghai 2024<br>Audio-Reactive visuals in UE5/TouchDesigner</p>
+            <br/><br/>
+            <div class="archive-video">
+                <a href="https://www.youtube.com/watch?v=bR1r3-H31BM" data-youtube-id="bR1r3-H31BM" data-player-title="Momentum" aria-label="Play Momentum">PLAY</a>
+            </div>
+            <p class="caption"><a href="https://www.youtube.com/watch?v=bR1r3-H31BM">Watch on YouTube</a></p>
+            <p class="caption">Inspired by sandufi <br> Momentum - Gesture-based Interactive Art <br>Azure Kinect body segmentation, StreamDiffusion real-time audio-visual image generation </p>
+            <br/><br/>
+            <div class="archive-video">
+                <video controls playsinline preload="none" aria-label="Interactive installation"
+                    poster="../media/images/interactive/studies/interactive-installation.webp" src="../media/videos/interactive/studies/interactive-installation.mp4"></video>
+            </div>
+            <p class="caption"><a href="https://www.youtube.com/watch?v=6N41j0NCC4w">Watch on YouTube</a></p>
+            <br/><br/>
+            <p class="alignCenter caption">Gesture Control Interactive Installation <br>UE5, TouchDesigner, Leap Motion</p>
+            <video loading="lazy" class="big-video loadAni" width="100%" controls playsinline loop preload="none" muted><source src="../media/videos/interactive/studies/leap-motion.mp4"></video>
+            <p class="caption">Gesture Control with Leap Motion <br>TouchDesigner, Leap Motion</p>
+            <video loading="lazy" class="big-video loadAni" width="100%" controls playsinline loop preload="none"><source src="../media/videos/interactive/studies/audio-reactive-01.mp4"></video>
+            <p class="caption loadAni">
+                Music: 驟雨の狭間 - Silentroom 
+                <br/>
+                Audio Reactive Particle System
+            </p>
+            <br/>
+            <h2 class="alignCenter loadAni">P5JS Works</h2>
+            <div class="container loadAni">
+                <div class="column two-Columns">
+                    <div class="processing-column-item">
+                        <iframe loading="lazy" class="big-video processingEmbed" src="https://openprocessing.org/sketch/2136284/embed/" width="720" height="720"></iframe>
+                    </div>
+                </div>
+                <div class="column two-Columns">   
+                    <div class="processing-column-item ">
+                        <iframe loading="lazy" class="big-video processingEmbed" src="https://openprocessing.org/sketch/2136221/embed/" width="1280" height="720"></iframe>
+                    </div>
+                </div>
+            </div>
+            <custom-footer></custom-footer>
+        </div>
+
+        <!-- Overlay of image when clicked -->
+        <div class="fullscreen-view">
+            <span class="close">&times;</span>
+            <img class="fullscreen-image" src="" alt="Fullscreen Image">
+            <video class="fullscreen-video" src="" alt="Fullscreen Image">
+        </div>
+        
+
+    </body>
+</html>

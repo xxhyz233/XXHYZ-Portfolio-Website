@@ -268,6 +268,23 @@ header.desktop-head h1 a:hover {
     margin: 2rem 0;
 }
 
+.archive-video {
+    display: grid;
+    aspect-ratio: 16 / 9;
+    background: #141414;
+}
+
+.archive-video :is(video, iframe, a) {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.archive-video a {
+    display: grid;
+    place-items: center;
+}
+
 .windflower-gallery {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -298,77 +315,6 @@ header.desktop-head h1 a:hover {
 
 .missionr-card:focus-visible .text-overlay {
     opacity: 1;
-}
-
-.missionr-intro {
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.missionr-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 12px;
-    margin: 2rem 0;
-}
-
-.missionr-wip {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 8px;
-    margin-top: 1rem;
-}
-
-.missionr-gallery .column-item {
-    min-width: 0;
-    align-self: start;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    cursor: zoom-in;
-}
-
-.missionr-gallery .column-item img,
-.missionr-gallery .column-item img:hover {
-    display: block;
-    width: 100%;
-    height: auto;
-    padding: 0;
-}
-
-.missionr-gallery .column-item:focus-visible {
-    outline: 2px solid white;
-    outline-offset: 3px;
-}
-
-@media screen and (max-width: 768px) {
-    .missionr-intro {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .missionr-intro .right-panel {
-        text-align: left;
-    }
-
-    .missionr-gallery {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 6px;
-    }
-
-    .missionr-wip {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 4px;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .missionr-gallery {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    .missionr-wip {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 }
 
 /* Evanescence (Trailer) */
@@ -501,6 +447,7 @@ header.desktop-head h1 a:hover {
 .column-item img {
     padding: 6px;
     width: 100%;
+    height: auto;
     transition: all 0.4s ease-out;
 }
 .column-item img:hover {
@@ -564,55 +511,6 @@ header.desktop-head h1 a:hover {
     color: #fff;
     font-size: 30px;
     cursor: pointer;
-}
-
-/* Preloader transition*/
-#preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
-    transition: opacity 1s ease;
-    pointer-events: none; /* Makes it non-interactive */
-}
-
-/* Hidden preloader (for fade-in effect after load) */
-#preloader.fade-out {
-    opacity: 0;
-    pointer-events: none; /* Disable interaction */
-}
-
-#preloader-logo {
-    width: 100px;
-    height: 100px;
-    opacity: 0;
-    animation: fadeInEffect 0.5s forwards ease-in-out;
-}
-
-/* Transition effect for the page */
-.fade-in {
-    opacity: 0;
-    animation: fadeInEffect 1s forwards ease-in;
-}
-
-/* Fade-in animation keyframes */
-@keyframes fadeInEffect {
-    to {
-        opacity: 1;
-    }
-}
-
-/* Main content is hidden initially for the transition */
-#main-content {
-    opacity: 0;
-    transition: opacity 1s ease;
 }
 
 /* Misc */
@@ -821,4 +719,22 @@ footer nav ul li:hover {
     footer {
         padding: 10px 0;
     }
+}
+
+.legacy-site-footer nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.legacy-site-footer a {
+    display: grid;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    place-items: center;
+}
+
+.legacy-site-footer img {
+    width: 1rem;
+    height: auto;
 }

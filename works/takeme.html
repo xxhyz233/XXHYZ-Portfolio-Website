@@ -1,74 +1,94 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>XXHYZ</title>
-        <link rel="stylesheet" href="../css/style.css"/>
-        <!--Google Fonts import-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-        <script src="https://kit.fontawesome.com/253ef9d4b1.js" crossorigin="anonymous"></script>
-        <script src="../script/script.js" defer></script>
-        <script src="../script/custom-components.js" defer></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#000000">
+        <title>Take me. | XXHYZ</title>
+        <link rel="icon" href="../media/images/branding/favicon.png" type="image/png">
+        <link rel="stylesheet" href="../css/cg-design.css">
+        <link rel="stylesheet" href="../css/site.css">
+        <script src="../script/cg-design.js" defer></script>
+        <script src="../script/site.js" defer></script>
     </head>
-    <body>
-        <custom-header></custom-header>
-
-        <div class="page-content" id="main-content">
-            <p class="description slowLoadAni">
-                <b>Take me.</b>
-                <br/>
-                2023 / 2 min
-            </p>
-            <div class ="big-video slowLoadAni" style="padding:50% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1036727675?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="风."></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-                <p class="description left-panel slowLoadAni">
-                    A catharsis of blurred emotions.
-                    <br/><br/>
-                    3D and 2D experimental work using emotional visual expression with subliminal perception. 
-                    <br/><br/>
-                </p>
-                <p class="description right-panel slowLoadAni">
-                    Director: XXHYZ
-                    <br/>
-                    Music: DESOLA7ED
-                    <br/><br/>
-                    --Selected Festivals--
-                    <br/>
-                    MONSTRA - Lisbon Animation Festival
-                    <br/>
-                    New York Animation Film Awards - 3D Animation Finalist
-                    <br/>
-                    Montreal International Animation Film Festival
-                    <br/>
-                    LA International Film Festival
-                    <br/>
-                    Athens ANIMFEST
-                    <br/>
-                    Animatex
-                    <br/>
-                    Palm Springs Intl. Animation Festival
-                    <br/>
-                    Berlin Shorts Award
-                    <br/>
-                    Anatolia International Film Festival
-                </p>
+    <body class="cg-design-index cg-project">
+        <header class="cg-design-index-header">
+            <div class="cg-design-index-shell cg-design-header-inner">
+                <a class="cg-design-signature" href="../pages/index.html">
+                    <img src="../media/images/branding/signature-400.png" width="400" height="129" alt="XXHYZ home">
+                </a>
+                <nav class="cg-design-index-nav" aria-label="Main navigation">
+                    <a href="../pages/index.html">CG/3D Design</a>
+                    <a aria-current="true" href="../pages/art.html">Art</a>
+                    <a href="../pages/interactive.html">Interactive/Immersive Experience</a>
+                    <a href="../pages/info.html">About</a>
+                </nav>
             </div>
-            <video loading="lazy" class="big-video slowLoadAni" width="100%" autoplay loop muted><source src="../media/videos/Takeme_4grid.mp4"></video>
-        
-            <custom-footer></custom-footer>
-        </div>
+        </header>
 
-       
+        <main class="cg-design-index-shell cg-project-main">
+            <div class="cg-project-heading">
+                <p>01.</p>
+                <h1>Take me.</h1>
+                <p class="cg-project-status">2023 · 2 min</p>
+            </div>
 
-        <div class="fullscreen-view">
-            <span class="close">&times;</span>
-            <img class="fullscreen-image" src="" alt="Fullscreen Image">
-            <video class="fullscreen-video" src="" alt="Fullscreen Image">
-        </div>
-        <div id="preloader">
-            <img src="/media/images/Preload.gif" alt="Loading Animation" id="preloader-logo">
-        </div>
+            <div class="cg-project-columns cg-project-intro">
+                <section aria-labelledby="takeme-brief">
+                    <h2 id="takeme-brief">Brief.</h2>
+                    <p>A catharsis of blurred emotions.</p>
+                </section>
+                <section aria-labelledby="takeme-process">
+                    <h2 id="takeme-process">Process.</h2>
+                    <p>3D and 2D experimental work using emotional visual expression with subliminal perception.</p>
+                </section>
+                <section aria-labelledby="takeme-credits">
+                    <h2 id="takeme-credits">Credits.</h2>
+                    <dl class="cg-project-credits">
+                        <div><dt>Film</dt><dd>XXHYZ</dd></div>
+                        <div><dt>Music</dt><dd>DESOLA7ED</dd></div>
+                    </dl>
+                </section>
+            </div>
+
+            <figure class="cg-design-trailer-frame cg-project-player cg-project-player--wide" aria-label="Take me. video">
+                <a class="cg-design-trailer-poster" href="https://vimeo.com/1036727675" data-embed="https://player.vimeo.com/video/1036727675?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1" data-player-title="Take me.">
+                    <img src="../media/images/art/take-me/cover.webp" alt="" decoding="async" fetchpriority="high">
+                    <span class="cg-design-play"><span class="cg-design-play-icon" aria-hidden="true"></span> PLAY</span>
+                </a>
+            </figure>
+            <p class="cg-project-video-link"><a href="https://vimeo.com/1036727675">Watch on Vimeo</a></p>
+
+            <section class="cg-project-section" aria-labelledby="takeme-festivals">
+                <h2 id="takeme-festivals">Selected festivals.</h2>
+                <ul class="cg-project-festivals">
+                    <li>MONSTRA - Lisbon Animation Festival</li>
+                    <li>New York Animation Film Awards - 3D Animation Finalist</li>
+                    <li>Montreal International Animation Film Festival</li>
+                    <li>LA International Film Festival</li>
+                    <li>Athens ANIMFEST</li>
+                    <li>Animatex</li>
+                    <li>Palm Springs Intl. Animation Festival</li>
+                    <li>Berlin Shorts Award</li>
+                    <li>Anatolia International Film Festival</li>
+                </ul>
+            </section>
+
+            <section class="cg-project-section" aria-labelledby="takeme-motion">
+                <h2 id="takeme-motion">Motion.</h2>
+                <video class="cg-project-video" controls muted loop playsinline preload="none" poster="../media/images/art/take-me/cover.webp" aria-label="Take me. motion preview">
+                    <source src="../media/videos/art/take-me/motion-study.mp4" type="video/mp4">
+                </video>
+            </section>
+        </main>
+
+        <footer class="cg-design-index-shell cg-design-index-footer">
+            <nav aria-label="Contact and social media">
+                <a href="mailto:zejun.c@xxhyz.net"><img src="../media/icons/cg-design/mail.svg" alt="Email"></a>
+                <a href="https://twitter.com/XXHYZ2"><img src="../media/icons/cg-design/x.svg" alt="X"></a>
+                <a href="https://space.bilibili.com/4558677"><img src="../media/icons/cg-design/bilibili.svg" alt="Bilibili"></a>
+                <a href="https://www.instagram.com/xxhyz.zzz/"><img src="../media/icons/cg-design/instagram.svg" alt="Instagram"></a>
+            </nav>
+        </footer>
     </body>
+</html>

@@ -1,0 +1,40 @@
+.site-preloader {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: #000;
+    pointer-events: none;
+}
+
+.site-preloader.is-finished {
+    opacity: 0;
+    transition: opacity 180ms ease-out;
+}
+
+.site-preloader img {
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+video[data-viewport-autoplay] {
+    width: 100%;
+    height: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    [data-scroll-reveal="pending"]:not(:focus-within) {
+        opacity: 0.35;
+    }
+
+    [data-scroll-reveal="visible"]:not(:focus-within) {
+        animation: site-scroll-fade 320ms ease-out;
+    }
+}
+
+@keyframes site-scroll-fade {
+    from { opacity: 0.35; }
+    to { opacity: 1; }
+}

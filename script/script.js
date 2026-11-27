@@ -31,7 +31,8 @@ columnItem.forEach((item) => {
       fullscreenImage.src = '';
     }
     else if (hasImg) {
-      const imgSrc = item.querySelector("img").src;
+      const image = item.querySelector("img");
+      const imgSrc = image.dataset.fullSrc || image.src;
       fullscreenImage.src = imgSrc;
       fullscreenImage.style.display = 'block';
       fullscreenVideo.src = '';
@@ -75,82 +76,25 @@ function closeFullscreen() {
 }
 
 
-// DOM load before GSAP animation 
-document.addEventListener("DOMContentLoaded", (event) => {
-  event.preventDefault;
-  // Header scroll animation
+// The custom header is available after the deferred scripts have run.
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector(".sticky");
+  if (!header || !window.gsap) return;
+
   let lastScrollTop = 0;
-  const header = document.querySelector('.sticky');
-  // Make the scrollable elements in the header into an array to create stagger
   const scrollElements = gsap.utils.toArray(".scAni");
-  window.addEventListener('scroll', function() {
-      let scrollTop = window.scrollY || document.documentElement.scrollTop;
-      if (scrollTop > lastScrollTop) {
-          // Scroll down animation
-          gsap.to(header, { y: '-100%', duration: 0.3 });
-          gsap.to(scrollElements, { y: '-500%', duration: 0.2, stagger: 0.04});
-      } else {
-          // Scroll up animation
-          gsap.to(header, { y: '0%', duration: 0.3 });
-          gsap.to(scrollElements, { y: '0%', duration: 0.2, stagger: 0.04});
-      }
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  }, false);
 
-  // Page load animation
-  const loadAni = gsap.utils.toArray(".loadAni");
-  gsap.fromTo(
-    loadAni,
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-      delay: 0.5,
-      duration: 0.8,
-      stagger: 0.1,
-    }
-  );
-  
-  // For slower pages like FILM/INFO
-  const slowLoadAni = gsap.utils.toArray(".slowLoadAni");
-  gsap.fromTo(
-    slowLoadAni,
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-      delay: 1,
-      duration: 2,
-      stagger: 0.6,
-    }
-  );
+  window.addEventListener("scroll", () => {
+    const scrollTop = Math.max(0, window.scrollY);
+    if (scrollTop === lastScrollTop) return;
 
-  // Preload Transition
-  const preloader = document.getElementById('preloader');
-  const mainContent = document.getElementById('main-content');
-
-  // Wait for the page to load, then fade-out the preloader
-  window.addEventListener('load', function() {
-        preloader.classList.add('fade-out'); // Fade out the black screen
-        mainContent.classList.add('fade-in'); // Fade in the main content
+    const scrollingDown = scrollTop > lastScrollTop;
+    gsap.to(header, { y: scrollingDown ? "-100%" : "0%", duration: 0.3 });
+    gsap.to(scrollElements, {
+      y: scrollingDown ? "-500%" : "0%",
+      duration: scrollingDown ? 0.2 : 0.3,
+      stagger: 0.04,
     });
-
-  // Fade-out effect before navigating to a new page  
-  const links = document.querySelectorAll('a');
-  links.forEach(link => {
-      link.addEventListener('click', function(event) {
-          event.preventDefault(); // Prevent immediate navigation
-
-            // Trigger the fade-out
-          preloader.style.opacity = '1'; // Show the black screen
-          mainContent.style.opacity = '0'; // Hide the content
-
-            // Wait for the transition to complete, then navigate
-          setTimeout(() => {
-              window.location.href = this.href; // Redirect to the new page
-          }, 1000); // Wait for 1 second (matching the CSS transition duration)
-        });
-    });
+    lastScrollTop = scrollTop;
+  }, { passive: true });
 });
